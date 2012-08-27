@@ -1,0 +1,44 @@
+<html>  
+<head>  
+<script src="http://code.jquery.com/jquery-latest.js"></script>
+<script type="text/javascript">  
+$(document).ready(function() {  
+  $("form#iscrizione").submit(function(){  
+    var nome = $("#nome").val();  
+    var cognome = $("#cognome").val();  
+    $.ajax({  
+      url: "ElasticSlideshow/index.html",  
+      type: "POST",  
+      data: "nome=" + nome + "&cognome=" + cognome,
+      dataType: "html",
+      success: function(msg) {  
+        $("div#risposta").html(msg);  
+      },
+      error: function(){
+        alert("Chiamata fallita!!!");
+      } 
+    }); 
+    return false;  
+  });
+});
+</script>  
+
+</head>  
+<body>  
+
+<form id="iscrizione">
+<p>
+Inserisci il nome:<br/>
+<input type="text" name="nome" id="nome"/>
+</p>
+<p>
+Inserisci il cognome:<br/>
+<input type="text" name="cognome" id="cognome"/>
+</p>
+<p><input type="submit" value="invia"></p>
+</form>
+
+<div id="risposta"></div>  
+
+</body> 
+</html> 

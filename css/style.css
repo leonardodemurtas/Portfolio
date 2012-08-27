@@ -845,3 +845,13 @@ code .nd { color: #9FAD7E; } /* CSS pseudo selector */
 	border: 1px solid red;
 	
 }
+
+
+.showProject{
+	display: block;
+	background-color: grey;
+	color: red;
+	font-size: 18px;
+	position: relative;
+	top: 100px;
+}
